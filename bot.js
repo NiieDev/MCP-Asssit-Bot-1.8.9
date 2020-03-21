@@ -6,8 +6,8 @@ var readline = require("readline");
 
 let prefix = '%^'
 
-const fields = new Map();
-const methods = new Map();
+var fields = new Map();
+var methods = new Map();
 
 client.on('ready', () => {
     console.log('I am ready!');
