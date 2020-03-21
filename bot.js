@@ -33,9 +33,9 @@ client.on('message', message => {
         message.channel.send("```\nコマンド:\n" + prefix + "mcptr <Field(例: field_100013_f), Method(例: func_100011_g)>```");
     }
     else if (message.content.startsWith(prefix + 'mcptr')) {
-        let field_or_method = message.content.split(" ").slice(1);
+        let field_or_method = message.content.split(" ").slice(1) + "";
         if(field_or_method.startsWith("field")){
-            message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method + "") + "```");
+            message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method) + "```");
         }else{
             
         }
