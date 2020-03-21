@@ -1,11 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const fs = require('fs');
 
 let prefix = '%^'
 
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: '%^help', type: 0 } });
+    
+    fs.readFile("stable/fields.csv", 'utf-8', (err, data) => {
+      if (err) throw err;
+      console.log(data);
+    });
 });
 
 client.on('message', message => {
