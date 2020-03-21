@@ -13,9 +13,10 @@ client.on('ready', () => {
     
     var text = fs.readFileSync("stable/fields.csv", 'utf8');
     var lines = text.toString().split('¥n');
+    var linesplit = null;
     for (var line of lines) {
-        var linesplit = line.split(",");
-        console.log(linesplit);
+        linesplit = line.split(",");
+        console.log(linesplit[0]);
         //fields.set(line.split(",").slice(0), line.split(",").slice(1));
     }
 });
