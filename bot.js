@@ -49,7 +49,7 @@ client.on('message', message => {
         let field_or_method = message.content.split(" ").slice(1) + "";
         if(field_or_method.startsWith("field")){
             message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method) + "```");
-        }else if(field_or_method.startsWith("func")){{
+        }else if(field_or_method.startsWith("func")){
             message.channel.send("```" + field_or_method + ": " + methods.get(field_or_method) + "```");
         }
     }
