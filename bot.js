@@ -18,9 +18,9 @@ client.on('ready', () => {
     var linesplit = null;
     reader.on("line", (data) => {
         linesplit = data.split(",");
-        console.log(data);
-        console.log(linesplit[0]);
+        fields.set(linesplit[0], linesplit[1]);
     });
+    console.log(fields.get("field_98289_l"));
     
 });
 
