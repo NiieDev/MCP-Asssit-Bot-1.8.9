@@ -15,7 +15,7 @@ client.on('ready', () => {
     var lines = text.toString().split('¥n');
     for (var line of lines) {
         console.log(line.split(",").slice(0) + ":" + line.split(",").slice(1));
-        map.set(line.split(",").slice(0), line.split(",").slice(1));
+        //fields.set(line.split(",").slice(0), line.split(",").slice(1));
     }
 });
 
