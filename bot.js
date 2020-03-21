@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const fs = require('fs');
 
 let prefix = '%^'
+var HashMap = require('hashmap');
 
 client.on('ready', () => {
     console.log('I am ready!');
