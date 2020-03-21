@@ -20,7 +20,7 @@ client.on('ready', () => {
         linesplit = data.split(",");
         fields.set(linesplit[0], linesplit[1]);
     });
-    console.log(fields.get("field_98289_l"));
+    console.log(fields.get("field_175514_bm"));
     
 });
 
