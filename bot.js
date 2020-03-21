@@ -16,9 +16,14 @@ client.on('ready', () => {
 
     var reader = readline.createInterface({ input: stream });
     var linesplit = null;
+    var bool = false;
+    
     reader.on("line", (data) => {
-        linesplit = data.split(",");
-        fields.set(linesplit[0], linesplit[1]);
+        if(bool){
+            linesplit = data.split(",");
+            fields.set(linesplit[0], linesplit[1]);
+        }
+        bool = true;
     });
     console.log(fields.get("field_175514_bm"));
 });
@@ -29,7 +34,7 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'mcptr')) {
         let field_or_method = message.content.split(" ").slice(1);
-        if(field_or_method.startsWith("field"){
+        if(field_or_method.startsWith("field")){
             message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method + "") + "```");
         }else{
             
