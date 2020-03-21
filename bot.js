@@ -29,7 +29,11 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'mcptr')) {
         let field_or_method = message.content.split(" ").slice(1);
-        message.channel.send("```" + field_or_method + ": " + fields.get("field_175514_bm") + ", " + fields.get(field_or_method + "") + "```");
+        if(field_or_method.startsWith("field"){
+            message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method + "") + "```");
+        }else{
+            
+        }
     }
 });
 
