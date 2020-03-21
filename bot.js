@@ -15,7 +15,7 @@ client.on('ready', () => {
     var linesplit = null;
     var lines = text.toString().split('¥n').forEach( function( value ) {
         linesplit = value.split(",");
-        console.log( value );
+        console.log(linesplit[0]);
     })
 });
 
