@@ -19,11 +19,8 @@ client.on('ready', () => {
     reader.on("line", (data) => {
         linesplit = data.split(",");
         fields.set(linesplit[0], linesplit[1]);
-        console.log(linesplit[0] + ":" + linesplit[1]);
-        console.log(fields.get(linesplit[0]));
-        console.log(fields.get("field_175514_bm"));
     });
-    
+    console.log(fields.get("field_175514_bm"));
 });
 
 client.on('message', message => {
