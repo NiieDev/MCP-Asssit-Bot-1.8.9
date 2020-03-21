@@ -12,13 +12,11 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: '%^help', type: 0 } });
     
     var text = fs.readFileSync("stable/fields.csv", 'utf8');
-    var lines = text.toString().split('¥n');
     var linesplit = null;
-    for (var line of lines) {
-        linesplit = line.split(",");
-        console.log(linesplit[0]);
-        //fields.set(line.split(",").slice(0), line.split(",").slice(1));
-    }
+    var lines = text.toString().split('¥n').forEach( function( value ) {
+        linesplit = value.split(",");
+        console.log( value );
+    })
 });
 
 client.on('message', message => {
