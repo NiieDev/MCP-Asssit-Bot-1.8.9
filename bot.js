@@ -31,6 +31,7 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'mcptr')) {
         let field_or_method = message.content.split(" ").slice(1);
+        message.channel.send("```" + fields.get(field_or_method) + "```");
     }
 });
 
