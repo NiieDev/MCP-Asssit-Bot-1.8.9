@@ -8,10 +8,11 @@ client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: '%^help', type: 0 } });
     
-    fs.readFile("stable/fields.csv", 'utf-8', (err, data) => {
-      if (err) throw err;
-      console.log(data);
-    });
+    var text = fs.readFileSync("stable/fields.csv", 'utf8');
+    var lines = text.toString().split('¥n');
+    for (var line of lines) {
+        console.log(line)
+    }
 });
 
 client.on('message', message => {
