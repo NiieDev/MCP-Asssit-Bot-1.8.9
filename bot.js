@@ -25,7 +25,20 @@ client.on('ready', () => {
         }
         bool = true;
     });
-    console.log(fields.get("field_175514_bm"));
+    
+    var stream2 = fs.createReadStream("stable/methods.csv", "utf8");
+
+    var reader2 = readline.createInterface({ input: stream2 });
+    var linesplit2 = null;
+    var bool2 = false;
+    
+    reader2.on("line", (data) => {
+        if(bool2){
+            linesplit2 = data.split(",");
+            methods.set(linesplit2[0], linesplit2[1]);
+        }
+        bool2 = true;
+    });
 });
 
 client.on('message', message => {
@@ -36,8 +49,8 @@ client.on('message', message => {
         let field_or_method = message.content.split(" ").slice(1) + "";
         if(field_or_method.startsWith("field")){
             message.channel.send("```" + field_or_method + ": " + fields.get(field_or_method) + "```");
-        }else{
-            
+        }else if(field_or_method.startsWith("func")){{
+            message.channel.send("```" + field_or_method + ": " + methods.get(field_or_method) + "```");
         }
     }
 });
